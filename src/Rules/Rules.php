@@ -1,5 +1,5 @@
 <?php
-namespace Rules;
+namespace Rules\
 use pocketmine\Server;
 use pocketmine\Player;
 use pocketmine\plugin\PluginBase;
@@ -13,9 +13,11 @@ class Rules extends PluginBase implements Listener{
         $this->getServer()->getPluginManager()->registerEvents(($this), $this);
         $this->getLogger()->info("Rules Plugin Enabled By PedsHampton");
     }
+    
     public function onDisable(): void{
         $this->getLogger()->info("Rules Plugin Disabled By PedsHampton");
     }
+    
     public function checkDepends(): void{
         $this->formapi = $this->getServer()->getPluginManager()->getPlugin("FormAPI");
         if(is_null($this->formapi)){
@@ -23,6 +25,7 @@ class Rules extends PluginBase implements Listener{
             $this->getPluginLoader()->disablePlugin($this);
         }
     }
+    
     public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args):bool{
         if($cmd->getName() == "rules"){
             if(!($sender instanceof Player)){
