@@ -17,12 +17,12 @@ class Rules extends PluginBase implements Listener{
         $this->getLogger()->info("Rules Plugin Disabled By PedsHampton");
     }
     public function onLoad(): void{
-        $this->getLogger()->info("Rules Plugin Reqires FormAPI To Work");
+        $this->getLogger()->info("Rules Plugin Requires FormAPI To Work");
     }
     public function checkDepends(): void{
         $this->formapi = $this->getServer()->getPluginManager()->getPlugin("FormAPI");
         if(is_null($this->formapi)){
-            $this->getLogger()->error("Rules Requires FormAPI To Work");
+            $this->getLogger()->error("Rules Plugin Requires FormAPI To Work");
             $this->getPluginLoader()->disablePlugin($this);
         }
     }
