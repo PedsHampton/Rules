@@ -16,6 +16,9 @@ class Rules extends PluginBase implements Listener{
     public function onDisable(): void{
         $this->getLogger()->info("Rules Plugin Disabled By PedsHampton");
     }
+    public function onLoad(): void{
+        $this->getLogger()->info("Rules Plugin Reqires FormAPI To Work");
+    }
     public function checkDepends(): void{
         $this->formapi = $this->getServer()->getPluginManager()->getPlugin("FormAPI");
         if(is_null($this->formapi)){
